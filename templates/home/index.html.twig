@@ -13,7 +13,7 @@
                 <p class="lead mb-0">{{ product.title }}</p>
                 </div>
                 <img src="{{ product.image}}"
-                class="card-img-top" alt="Laptop" />
+                class="card-img-top" alt="{{ product.title }}" style="max-width: 200px; margin: auto" />
                 <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <p class="small"><a href="#!" class="text-muted">{{ product.category.name }}</a></p>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between mb-2">
-                    <p class="text-muted mb-0">Available: <span class="fw-bold">{{ random(1, 100)}}</span></p>
+                    <p class="text-muted mb-0">Available: <span class="fw-bold">{{ random(1, 50)}}</span></p>
                     <div class="ms-auto text-warning">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
