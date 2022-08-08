@@ -10,10 +10,15 @@
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
             <div class="card">
                 <div class="d-flex justify-content-between p-3">
-                <p class="lead mb-0">{{ product.title }}</p>
+                <a href="{{ path('product', {slug: product.slug}) }}" class="text-decoration-none text-reset">
+                    <p class="lead mb-0">{{ product.title }}</p>
+                </a>
                 </div>
-                <img src="{{ product.image}}"
-                class="card-img-top" alt="{{ product.title }}" style="max-width: 200px; margin: auto" />
+                <a href="{{ path('product', {slug: product.slug}) }}" style="max-width: 200px; margin: auto">
+                    <img src="{{ product.image }}"
+                    class="card-img-top" alt="{{ product.title }}" />
+                </a>
+              
                 <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <p class="small"><a href="#!" class="text-muted">{{ product.category.name }}</a></p>
@@ -21,7 +26,9 @@
                 </div>
 
                 <div class="d-flex justify-content-between mb-3">
-                    <h5 class="mb-0">{{ product.title }}</h5>
+                    <a href="{{ path('product', {slug: product.slug}) }}" class="text-decoration-none text-reset">
+                        <h5 class="mb-0">{{ product.title }}</h5>
+                    </a>
                     <h5 class="text-dark mb-0">{{ product.price / 10 }}€</h5>
                 </div>
 

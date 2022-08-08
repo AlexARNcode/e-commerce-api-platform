@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}E-commerce - {{ product.title }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ path('home') }}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ path('home') }}">Products</a></li>
+    <li class="breadcrumb-item"><a href="#">{{ product.category.name }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+  </ol>
+</nav>
+
+<div class="container mt-5 mb-5">	
+</div>
+
+    <div class="card">	
+        <div class="row g-0">	
+            <div class="col-md-6 border-end">	
+                <div class="d-flex flex-column justify-content-center">	
+                    <div class="main_image">
+                        <img src="{{ product.image }}" id="main_product_image" width="350">	
+                    </div>	
+                </div>	
+                </div>	
+                    <div class="col-md-6">	
+                        <div class="p-3 right-side">	
+                             <div class="d-flex justify-content-between align-items-center">	
+                                <h3>{{ product.title }}</h3>	
+                                <span class="heart">
+                                    <i class='bx bx-heart'></i>
+                                </span>	
+                        </div>	
+                <div class="mt-2 pr-3 content">
+                	<p>{{ product.description }}</p>	
+                    </div>	
+                    <h3>{{ product.price / 10 }}€</h3>
+                    <div class="ratings d-flex flex-row align-items-center">	
+                    <div class="d-flex flex-row">	
+                    <i class='bx bxs-star' ></i>	
+                    <i class='bx bxs-star' ></i>	
+                    <i class='bx bxs-star' ></i>	
+                    <i class='bx bxs-star' ></i>	
+                    <i class='bx bx-star' ></i>	
+                    </div>	
+                    <span>{{ random(1, 400)}} reviews</span>	
+                    </div>	
+                    <div class="mt-5">	
+                    <div class="colors">	
+	</div>	</div>	
+    <div class="buttons d-flex flex-row mt-5 gap-3">	
+        <button class="btn btn-outline-dark">Buy Now</button>	
+        <button class="btn btn-dark">Add to Basket</button>	
+    </div>	
+        <i class='bx bx-share-alt share'></i>	</div>	</div>	</div>	</div>	</div> </div>
+{% endblock %}
