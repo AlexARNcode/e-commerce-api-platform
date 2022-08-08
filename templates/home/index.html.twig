@@ -1,20 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}E-commerce{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row">
+         {% for product in products %}
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+            <div class="card">
+                <div class="d-flex justify-content-between p-3">
+                <a href="{{ path('product', {slug: product.slug}) }}" class="text-decoration-none text-reset">
+                    <p class="lead mb-0">{{ product.title }}</p>
+                </a>
+                </div>
+                <a href="{{ path('product', {slug: product.slug}) }}" style="max-width: 200px; margin: auto">
+                    <img src="{{ product.image }}"
+                    class="card-img-top" alt="{{ product.title }}" />
+                </a>
+              
+                <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <p class="small"><a href="#!" class="text-muted">{{ product.category.name }}</a></p>
+                    <p class="small text-danger"><s>{{ (product.price / 10) + (product.price / 10 / 5) }}€</s></p>
+                </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                <div class="d-flex justify-content-between mb-3">
+                    <a href="{{ path('product', {slug: product.slug}) }}" class="text-decoration-none text-reset">
+                        <h5 class="mb-0">{{ product.title }}</h5>
+                    </a>
+                    <h5 class="text-dark mb-0">{{ product.price / 10 }}€</h5>
+                </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/alex/Documents/Dev/e-commerce-api-platform/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/alex/Documents/Dev/e-commerce-api-platform/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+                <div class="d-flex justify-content-between mb-2">
+                    <p class="text-muted mb-0">Available: <span class="fw-bold">{{ random(1, 50)}}</span></p>
+                    <div class="ms-auto text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+  
+  
 {% endblock %}
