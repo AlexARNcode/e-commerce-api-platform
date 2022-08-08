@@ -8,5 +8,12 @@
   
   ## Next steps
   - Dockerize the project to make it easy to launch it on any platform, without any configuration require by the user.
-  - Create the views for the products
-  - Manage the user session, carts, etc..
+  - ~~Create the views for the products~~ (DONE)
+  - Create the user dashboard
+  - Manage adding product to cart
+  - Manage payment
+  - Add 2FA (2 factor authentication)
+  - Improve design of login and register pages
+  - Create categories pages
+  - Create the backoffice dashboard (EasyAdmin?)
+  
