@@ -21,7 +21,10 @@
               
                 <div class="card-body">
                 <div class="d-flex justify-content-between">
+             
+                {% if (product.category is not null) %}
                     <p class="small"><a href="#!" class="text-muted">{{ product.category.name }}</a></p>
+                {% endif %}
                     <p class="small text-danger"><s>{{ (product.price / 10) + (product.price / 10 / 5) }}€</s></p>
                 </div>
 
